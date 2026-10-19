@@ -2,6 +2,8 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import authService from '../services/auth.service';
 import userService from '../services/user.service';
 import followService from '../services/follow.service';
+import useFeedStore from '../store/useFeedStore';
+import useNotificationStore from '../store/useNotificationStore';
 
 const AuthContext = createContext(null);
 
@@ -153,6 +155,11 @@ export const AuthProvider = ({ children }) => {
   }, [loadFollowing]);
 
   useEffect(() => {
+    const resetStores = () => {
+      useFeedStore.getState().reset();
+      useNotificationStore.getState().reset();
+    };
+
     const handleForcedLogout = () => {
       setUser(null);
       setToken(null);
@@ -160,6 +167,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.removeItem('access_token');
       localStorage.removeItem('refresh_token');
       localStorage.removeItem('following_ids');
+      resetStores();
       setIsLoading(false);
     };
 
@@ -209,6 +217,9 @@ export const AuthProvider = ({ children }) => {
       setUser(null);
       setToken(null);
       setFollowingSet(new Set());
+      // Reset Zustand stores on explicit logout
+      useFeedStore.getState().reset();
+      useNotificationStore.getState().reset();
     }
   };
 
