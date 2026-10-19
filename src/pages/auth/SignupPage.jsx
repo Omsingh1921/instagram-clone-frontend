@@ -113,8 +113,8 @@ export const SignupPage = () => {
     setSuccessMessage('');
 
     try {
-      await authService.requestSignupOtp(normalizedEmail);
-      setSuccessMessage('Confirmation code sent to your email.');
+      const res = await authService.requestSignupOtp(normalizedEmail);
+      setSuccessMessage(res?.message || 'Confirmation code sent to your email.');
       setStage('otp');
       setCooldown(60);
     } catch (err) {
@@ -187,8 +187,8 @@ export const SignupPage = () => {
     setSuccessMessage('');
 
     try {
-      await authService.resendSignupOtp(email.trim().toLowerCase());
-      setSuccessMessage('New confirmation code sent to your email.');
+      const res = await authService.resendSignupOtp(email.trim().toLowerCase());
+      setSuccessMessage(res?.message || 'New confirmation code sent to your email.');
       setCooldown(60);
     } catch (err) {
       const msg = err?.message || 'Failed to resend confirmation code.';
