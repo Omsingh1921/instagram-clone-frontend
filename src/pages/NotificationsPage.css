@@ -1,0 +1,120 @@
+/* Notifications Page */
+.notifications-page-container {
+  width: 100%;
+  max-width: 600px;
+  padding: var(--space-6) var(--space-4);
+  display: flex;
+  flex-direction: column;
+}
+
+.notifications-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.notifications-page-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.mark-all-read-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mark-all-read-btn:hover {
+  color: #0077e6;
+}
+
+.notifications-section-heading {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: var(--space-4) 0 var(--space-2) 0;
+}
+
+.notifications-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.notification-item-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: var(--radius-lg);
+  transition: background var(--transition-fast);
+  cursor: pointer;
+}
+
+.notification-item-card:hover {
+  background-color: var(--bg-hover);
+}
+
+.notification-item-card.unread {
+  background-color: rgba(0, 149, 246, 0.06);
+}
+
+.notification-main-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.notification-text-box {
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+.actor-username {
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.notification-time {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-left: 6px;
+}
+
+.notification-unread-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.notification-side-action {
+  margin-left: var(--space-3);
+  flex-shrink: 0;
+}
+
+.notification-post-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.notif-follow-btn {
+  padding: 6px 14px;
+  font-size: var(--font-size-xs);
+}

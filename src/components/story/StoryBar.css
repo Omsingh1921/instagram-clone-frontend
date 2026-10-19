@@ -1,0 +1,65 @@
+/* Story Bar Styles */
+.story-bar-container {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 16px 12px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-5);
+  overflow-x: auto;
+  max-width: 470px;
+  width: 100%;
+  scrollbar-width: none;
+}
+
+.story-bar-container::-webkit-scrollbar {
+  display: none;
+}
+
+.story-bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 66px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.story-avatar-holder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-story-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.story-username-label {
+  font-size: 11px;
+  color: var(--text-primary);
+  max-width: 64px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

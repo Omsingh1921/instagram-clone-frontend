@@ -1,0 +1,89 @@
+.follow-list-container {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+}
+
+.follow-search-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--bg-primary);
+}
+
+.follow-search-icon {
+  color: var(--text-muted);
+}
+
+.follow-search-input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  width: 100%;
+  outline: none;
+}
+
+.follow-users-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-2) 0;
+}
+
+.follow-user-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-4);
+  transition: background var(--transition-fast);
+}
+
+.follow-user-item:hover {
+  background-color: var(--bg-hover);
+}
+
+.follow-user-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  flex: 1;
+}
+
+.follow-user-names {
+  display: flex;
+  flex-direction: column;
+}
+
+.follow-username {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.follow-fullname {
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+.follow-item-btn {
+  padding: 6px 14px;
+  font-size: var(--font-size-xs);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.follow-list-loading,
+.follow-list-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  padding: var(--space-6);
+  text-align: center;
+}
